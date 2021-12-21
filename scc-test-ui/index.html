@@ -20,9 +20,18 @@
 </head>
 
 <body>
-  <scc-test-ui></scc-test-ui>
+  <div style="width: 100%; display: inline-block;">
+    <scc-sidebar></scc-sidebar>
+    <scc-sidebar></scc-sidebar>
+    <scc-journey-view></scc-journey-view>
+  </div>
+  <div style="display: flex; justify-content: stretch; align-content: stretch;">
+    <!-- jsonview -->
+  </div>
 
   <script type="module" src="./src/scc-test-ui.js"></script>
+  <script type="module" src="./src/components/scc-sidebar/index.js"></script>
+  <script type="module" src="./src/components/scc-journey-view/index.js"></script>
 </body>
 
 </html>
