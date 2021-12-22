@@ -4,13 +4,14 @@ class SccJourneyView extends LitElement {
   static styles = css`
     #journeyView {
       background-color: white;
+      border: 2px solid white;
       color: blue;
       display: inline-block;
       height: 60vh;
-      width: 65%;
       margin: 2px;
       padding-left: 5px;
-      border: 2px solid teal;
+      vertical-align: top;
+      width: 65%;
     }
   `;
 

@@ -12,10 +12,6 @@ class SccSidebarItemGroup extends LitElement {
       padding: 2px;
       width: 92%;
     }
-
-    #sidebar-item-group {
-      display: block;
-    }
   `;
 
   static properties = {};
@@ -23,7 +19,7 @@ class SccSidebarItemGroup extends LitElement {
   render() {
     return html`
       <div id="sidebar-item-group">
-        <h2>Title</h2>
+        <h2>Select ${this.getAttribute('title')}</h2>
         <ul id="items">
           <li>Item 1</li>
           <li>Item 2</li>
