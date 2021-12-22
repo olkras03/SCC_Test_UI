@@ -18,7 +18,9 @@ class SccJourneyView extends LitElement {
 
   render() {
     return html`
-      <div id="journeyView">Hello world</div>
+      <div id="journeyView">
+        <slot></slot>
+      </div>
     `
   }
 };

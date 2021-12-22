@@ -18,7 +18,9 @@ class SccSidebar extends LitElement {
 
   render() {
     return html`
-      <div id="sidebar">Hello world</div>
+      <div id="sidebar">
+        <slot></slot>
+      </div>
     `
   }
 };
