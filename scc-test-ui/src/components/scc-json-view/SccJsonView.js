@@ -21,9 +21,9 @@ class SccJsonView extends LitElement {
     return html`
     <div id="json-view">
       <h2>${this.getAttribute('title')}</h2>
-      <pre  cols=55 rows=60 contenteditable="true">
+      <pre cols=55 rows=500 contenteditable="true">
         {
-          something: {}
+          something: {},
         }
       </pre>
     </div>
