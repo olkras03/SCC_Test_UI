@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
 
+import { store } from '../../redux/store';
+
 class SccSidebarItemGroup extends LitElement {
   static styles = css`
     #sidebar-item-group {
@@ -32,7 +34,10 @@ class SccSidebarItemGroup extends LitElement {
 
   render() {
     const items = this.getAttribute('items').split(', ');
-    this.addEventListener('click', e => console.log(e.path[0].innerText));
+    this.addEventListener('click', e => store.dispatch({
+      type: `CHANGE_${this.getAttribute('title').toUpperCase()}`,
+      payload: `${e.path[0].innerText}`,
+    }));
 
     return html`
       <div id="sidebar-item-group">

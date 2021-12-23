@@ -1,6 +1,10 @@
 import { LitElement, html, css } from 'lit';
 
-class SccPage extends LitElement {
+import {connect} from 'pwa-helpers';
+
+import { store } from '../../redux/store';
+
+class SccPage extends connect(store)(LitElement) {
   static styles = css`
     #scc-page {
       background-color: #efeff2;
@@ -22,13 +26,26 @@ class SccPage extends LitElement {
     }
   `;
 
-  static properties = {};
+static get properties() {
+  return {
+    title: {type: String}
+  }
+};
+
+constructor() {
+  super();
+  this.title = '';
+}
+
+stateChanged({ rootReducer: { page }}) {
+  this.title = page;
+}
 
   render() {
     return html`
     <body>
       <div id="scc-page">
-        <h2 id="title">${this.getAttribute('title')}</h2>
+        <h2 id="title">${this.title}</h2>
         <slot></slot>
         <slot></slot>
         <slot></slot>
