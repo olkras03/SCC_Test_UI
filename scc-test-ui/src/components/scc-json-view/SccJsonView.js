@@ -1,6 +1,10 @@
 import { LitElement, html, css } from 'lit';
 
-class SccJsonView extends LitElement {
+import { connect } from 'pwa-helpers';
+
+import { store } from '../../redux/store';
+
+class SccJsonView extends connect(store)(LitElement) {
   static styles = css`
     #json-view {
       background-color: black;
@@ -16,15 +20,30 @@ class SccJsonView extends LitElement {
     }
   `;
 
-  static properties = {};
+static get properties() {
+  return {
+    title: {type: String}
+  }
+};
+
+constructor() {
+  super();
+  this.title = this.getAttribute('title');
+  this.state = {}
+}
+
+stateChanged({ rootReducer }) {
+  console.log(rootReducer);
+  this.state = this.title === 'risk' ? rootReducer.risk : rootReducer.config;
+}
 
   render() {
     return html`
     <div id="json-view">
-      <h2>${this.getAttribute('title')}</h2>
+      <h2>${this.title}</h2>
       <pre cols=55 rows=500 contenteditable="true">
-        {
-          something: {},
+        ${
+          { ...this.state }
         }
       </pre>
     </div>

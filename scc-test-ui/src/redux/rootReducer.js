@@ -1,8 +1,17 @@
 const initState = {
   component: '',
-  page: '',
+  page: 'Personal Details',
   product: '',
-  style: '',
+  style: 'Default',
+  risk: {
+    contact: {},
+    personalDetails: {},
+  },
+  config: {
+    someConfig: {
+      couldInsteadBe: 'HTML',
+    },
+  },
 };
 
 const rootReducer = (state = initState, action) => {
