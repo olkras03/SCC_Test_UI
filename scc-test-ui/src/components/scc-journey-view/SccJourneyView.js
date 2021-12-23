@@ -9,8 +9,9 @@ class SccJourneyView extends LitElement {
       display: inline-block;
       height: 60vh;
       margin: auto;
+      margin-top: 2px;
       overflow: scroll;
-      padding: 10px;
+      padding-right: 10px;
       vertical-align: top;
       width: 65%;
     }
