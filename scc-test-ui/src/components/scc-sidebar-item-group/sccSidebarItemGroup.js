@@ -1,9 +1,5 @@
 import { LitElement, html, css } from 'lit';
 
-const onClick = value => {
-  console.log(value);
-}
-
 class SccSidebarItemGroup extends LitElement {
   static styles = css`
     #sidebar-item-group {
@@ -12,7 +8,9 @@ class SccSidebarItemGroup extends LitElement {
       color: teal;
       display: inline-block;
       margin: 2%;
-      min-height: 25px;
+      max-height: 110px;
+      min-height: 50px;
+      overflow: scroll;
       padding: 2px;
       width: 92%;
     }
@@ -38,7 +36,7 @@ class SccSidebarItemGroup extends LitElement {
 
     return html`
       <div id="sidebar-item-group">
-        <h2>Select ${this.getAttribute('title')}</h2>
+        <h3>Select ${this.getAttribute('title')}</h3>
         <ul id="items">
           ${items.map(i => html`<li><button class="link-button" name="${i}" value="${i}" key="${i}">${i}</button></li>`)}
         </ul>

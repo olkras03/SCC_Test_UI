@@ -9,6 +9,7 @@ class SccJsonView extends LitElement {
       display: inline-block;
       height: 38vh;
       margin: 2px;
+      overflow: scroll;
       padding-left: 5px;
       vertical-align: top;
       width: 48%;

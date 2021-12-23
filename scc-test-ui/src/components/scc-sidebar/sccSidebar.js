@@ -9,6 +9,7 @@ class SccSidebar extends LitElement {
       display: inline-block;
       height: 60vh;
       margin: 2px;
+      overflow: scroll;
       padding-left: 5px;
       vertical-align: top;
       width: 15%;
