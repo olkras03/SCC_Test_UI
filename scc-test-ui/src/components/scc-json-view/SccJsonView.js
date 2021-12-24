@@ -32,19 +32,16 @@ constructor() {
   this.state = {}
 }
 
-stateChanged({ rootReducer }) {
-  console.log(rootReducer);
-  this.state = this.title === 'risk' ? rootReducer.risk : rootReducer.config;
+stateChanged({ rootReducer: { config, risk } }) {
+  this.state = this.title === 'Risk' ? risk : config;
 }
 
   render() {
     return html`
     <div id="json-view">
       <h2>${this.title}</h2>
-      <pre cols=55 rows=500 contenteditable="true">
-        ${
-          { ...this.state }
-        }
+      <pre id="json">
+        <code>${JSON.stringify(this.state, null, 4)}</code>
       </pre>
     </div>
     `
