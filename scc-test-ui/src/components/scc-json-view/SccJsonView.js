@@ -34,8 +34,10 @@ constructor() {
 }
 
 stateChanged({ rootReducer: { config, risk } }) {
-  console.log(document.getElementById('scc-page')); //can we output this to the page as html?
-  this.state = this.title === 'Risk' ? risk : config;
+  const rawMarkup = [...document.getElementById('scc-journey-view').innerHTML.replace('\n      ', '').trim().split('\n')];
+  const cleanedMarkup = rawMarkup.map((el) => el.replace("\\", '')); //can't get rid of backslashes for some reason
+  const markup = cleanedMarkup.map(el => el.trim());
+  this.state = this.title === 'Risk' ? risk : markup;
 }
 
   render() {
