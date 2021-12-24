@@ -11,6 +11,7 @@ class SccJsonView extends connect(store)(LitElement) {
       border: 2px solid white;
       color: white;
       display: inline-block;
+      font-size: 16px;
       height: 38vh;
       margin: 2px;
       overflow: scroll;
@@ -33,6 +34,7 @@ constructor() {
 }
 
 stateChanged({ rootReducer: { config, risk } }) {
+  console.log(document.getElementById('scc-page')); //can we output this to the page as html?
   this.state = this.title === 'Risk' ? risk : config;
 }
 
@@ -41,7 +43,7 @@ stateChanged({ rootReducer: { config, risk } }) {
     <div id="json-view">
       <h2>${this.title}</h2>
       <pre id="json">
-        <code>${JSON.stringify(this.state, null, 4)}</code>
+        <code>${JSON.stringify(this.state, undefined, 2)}</code>
       </pre>
     </div>
     `

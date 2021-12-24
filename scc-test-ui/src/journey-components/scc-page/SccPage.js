@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-import {connect} from 'pwa-helpers';
+import { connect } from 'pwa-helpers';
 
 import { store } from '../../redux/store';
 
@@ -43,7 +43,6 @@ stateChanged({ rootReducer: { page }}) {
 
   render() {
     return html`
-    <body>
       <div id="scc-page">
         <h2 id="title">${this.title}</h2>
         <slot></slot>
@@ -57,7 +56,6 @@ stateChanged({ rootReducer: { page }}) {
         <slot></slot>
         <slot></slot>
       </div>
-    </body>
     `
   }
 }
