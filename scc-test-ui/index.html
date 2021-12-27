@@ -29,15 +29,15 @@
       <scc-sidebar-item-group title="Component" items="Component 1, Component 2"></scc-sidebar-item-group>
       <scc-sidebar-item-group title="Style" items="Dark Mode, Default"></scc-sidebar-item-group>
     </scc-sidebar>
-    <scc-journey-view id="scc-journey-view">
+    <scc-journey-view id="scc-journey-view" style="background-color: grey; color: blue;">
       <scc-page id="scc-page">
         <scc-section title="hello section"></scc-section>
       </scc-page>
     </scc-journey-view>
   </div>
   <div style="width: 100%; display: inline-block; padding-left: 10px;">
-    <scc-json-view title="Risk"></scc-json-view>
-    <scc-json-view title="Config"></scc-json-view>
+    <scc-json-view id="scc-json-view" title="Risk"></scc-json-view>
+    <scc-save-config></scc-save-config>
   </div>
 
   <script type="module" src="./src/scc-test-ui.js"></script>
@@ -45,8 +45,8 @@
   <script type="module" src="./src/components/scc-journey-view/index.js"></script>
   <script type="module" src="./src/components/scc-json-view/index.js"></script>
   <script type="module" src="./src/components/scc-sidebar-item-group/index.js"></script>
-  <script type="module" src="./src/journey-components/scc-page/index.js"></script>
-  <script type="module" src="./src/journey-components/scc-section/index.js"></script>
+  <script type="module" src="./src/components/scc-save-config/index.js"></script>
+  <script type="module" src="./src/journey-components/index.js"></script>
 </body>
 
 </html>

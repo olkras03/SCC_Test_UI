@@ -35,10 +35,10 @@ const rootReducer = (state = initState, action) => {
         product: action.payload
       };
 
-    case 'CHANGE_STYLE':
+    case 'CHANGE_CONFIG':
       return {
         ...state,
-        style: action.payload
+        config: action.payload
       };
 
     default:

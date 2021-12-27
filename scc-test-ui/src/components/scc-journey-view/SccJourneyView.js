@@ -17,7 +17,15 @@ class SccJourneyView extends LitElement {
     }
   `;
 
-  static properties = {};
+  static get properties() {
+    return {
+      config: { type: Object },
+    };
+  };
+
+  stateChanged({ rootReducer: { config } }) {
+    this.config = config;
+  }
 
   render() {
     return html`

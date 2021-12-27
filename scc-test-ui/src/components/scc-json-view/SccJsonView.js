@@ -13,6 +13,7 @@ class SccJsonView extends connect(store)(LitElement) {
       display: inline-block;
       font-size: 16px;
       height: 38vh;
+      margin: auto;
       margin: 2px;
       overflow: scroll;
       padding-left: 5px;
@@ -31,14 +32,11 @@ constructor() {
   super();
   this.title = this.getAttribute('title');
   this.state = {}
-}
+};
 
-stateChanged({ rootReducer: { config, risk } }) {
-  const rawMarkup = [...document.getElementById('scc-journey-view').innerHTML.replace('\n      ', '').trim().split('\n')];
-  const cleanedMarkup = rawMarkup.map((el) => el.replace("\\", '')); //can't get rid of backslashes for some reason
-  const markup = cleanedMarkup.map(el => el.trim());
-  this.state = this.title === 'Risk' ? risk : markup;
-}
+stateChanged({ rootReducer: { risk } }) {
+  this.state = risk;
+};
 
   render() {
     return html`
@@ -49,7 +47,7 @@ stateChanged({ rootReducer: { config, risk } }) {
       </pre>
     </div>
     `
-  }
+  };
 };
 
 export default SccJsonView;
