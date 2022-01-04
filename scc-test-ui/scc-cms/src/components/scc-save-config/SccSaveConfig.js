@@ -4,10 +4,6 @@ import { connect } from 'pwa-helpers';
 
 import { store } from '../../redux/store';
 
-const saveConfig = () => {
-  console.log('save config');
-}
-
 class SccSaveConfig extends connect(store)(LitElement) {
   static styles = css`
     #save-config {
@@ -19,18 +15,20 @@ class SccSaveConfig extends connect(store)(LitElement) {
       height: 38vh;
       margin: auto;
       margin: 2px;
-      padding-left: 5px;
+      overflow: scroll;
       vertical-align: top;
       width: 48%;
     }
 
     #save-config-button {
       background-color: green;
-      width: 100%;
+      color: white;
       font-size: 24px;
-      vertical-align: center;
+      height: 100%;
+      margin: auto;
       text-align: center;
-      padding: 26%;
+      vertical-align: center;
+      width: 100%;
     }
   `;
 
