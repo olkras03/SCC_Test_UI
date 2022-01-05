@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     networks:
-      - "webnet"
+      - "scc"
   scc-api:
     container_name: scc-api
     restart: always
@@ -15,7 +15,7 @@ services:
     ports:
       - "5000:80"
     networks:
-      - "webnet"
+      - "scc"
 
   mongo:
     container_name: scc-mongo
@@ -27,7 +27,7 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - "webnet"
+      - "scc"
 
 networks:
-  webnet:
+  scc:
