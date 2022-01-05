@@ -5,7 +5,7 @@ services:
     restart: always
     build: ./scc-cms
     ports:
-      - "8000:8000"
+      - "8000:80"
     networks:
       - "scc"
   scc-api:
