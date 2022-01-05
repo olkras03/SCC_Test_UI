@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 
@@ -25,6 +26,13 @@ namespace scc_api
         public async Task<JourneyEntity> GetJourney(string journeyName)
         {
             var retrievedJourney = await _mongoJourney.collection.Find(journey => journey.name == journeyName).FirstOrDefaultAsync();
+            
+            return retrievedJourney;
+        }
+        
+        public async Task<List<JourneyEntity>> GetJourney()
+        {
+            var retrievedJourney = await _mongoJourney.collection.Find(name => true).ToListAsync();
             
             return retrievedJourney;
         }

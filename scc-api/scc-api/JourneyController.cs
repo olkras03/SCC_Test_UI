@@ -11,16 +11,19 @@ namespace scc_api
     [ApiController]
     public class JourneyController : ControllerBase
     {
-        public JourneyController()
+        private readonly IJourneyService _journeyService;
+        public JourneyController(IJourneyService journeyService)
         {
-            
+            _journeyService = journeyService;
         }
-        
+
         // GET: api/Journey
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<JourneyEntity>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var journey = await _journeyService.GetJourney();
+
+            return journey;
         }
 
         // GET: api/Journey/5

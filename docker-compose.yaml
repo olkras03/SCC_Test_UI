@@ -25,17 +25,18 @@ services:
     restart: always
     volumes:
       - ./scc-db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-      - mongo-data:/data/db
+      - mongo-volume:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: scc
+      MONGO_INITDB_ROOT_PASSWORD: comparethemarket
+      MONGO_INITBD_DATABASE: scc
     ports:
       - "27017:27017"
     networks:
       - "scc"
   
 volumes:
-  mongo-data:
+  mongo-volume:
 
 networks:
   scc:
