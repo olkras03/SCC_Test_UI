@@ -14,6 +14,8 @@ services:
     build: ./scc-api
     ports:
       - "5000:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT : Production
     networks:
       - "scc"
 
@@ -21,6 +23,9 @@ services:
     container_name: scc-mongo
     image: mongo
     restart: always
+    volumes:
+      - ./scc-db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - mongo-data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -28,6 +33,9 @@ services:
       - "27017:27017"
     networks:
       - "scc"
+  
+volumes:
+  mongo-data:
 
 networks:
   scc:
