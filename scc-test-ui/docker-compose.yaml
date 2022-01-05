@@ -8,8 +8,17 @@ services:
       - "8000:8000"
     networks:
       - "webnet"
+  scc-api:
+    container_name: scc-api
+    restart: always
+    build: ./scc-api
+    ports:
+      - "5000:80"
+    networks:
+      - "webnet"
 
   mongo:
+    container_name: scc-mongo
     image: mongo
     restart: always
     environment:
