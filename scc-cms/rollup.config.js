@@ -20,8 +20,8 @@ export default {
   plugins: [
     /** Enable using HTML as rollup entrypoint */
     html({
-      minify: true,
-      injectServiceWorker: true,
+      minify: false,
+      injectServiceWorker: false,
       serviceWorkerPath: 'dist/sw.js',
     }),
     /** Resolve bare module imports */
