@@ -47,8 +47,6 @@ stateChanged({ rootReducer: { product, page, config: { html }} }) {
   this.product = product
   this.page = page;
   this.html = html;
-
-  console.log(this.html);
 };
 
   render() {
