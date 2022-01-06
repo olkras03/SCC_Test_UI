@@ -43,17 +43,27 @@ constructor() {
   this.state = {}
 };
 
-stateChanged({ rootReducer: { config } }) {
-  this.config = config;
+stateChanged({ rootReducer: { product, page, config: { html }} }) {
+  this.product = product
+  this.page = page;
+  this.html = html;
 
-  console.log(JSON.parse(config));
+  console.log(this.html);
 };
 
   render() {
-    this.addEventListener('click', e => store.dispatch({
+    this.addEventListener('click', () => {
+      const html = { html: document.getElementById('scc-page').outerHTML };
+
+      store.dispatch({
       type: `CHANGE_CONFIG`,
-      payload: JSON.stringify(document.getElementById('scc-journey-view').innerHTML)
-    }));
+      payload: {
+        content: html,
+        page: this.page,
+        product: this.product,
+      },
+    })
+  });
 
     return html`
     <div id="save-config">

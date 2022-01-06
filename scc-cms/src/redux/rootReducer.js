@@ -1,16 +1,16 @@
 const initState = {
   component: '',
   page: 'Personal Details',
-  product: '',
+  product: 'Home',
   style: 'Default',
   risk: {
     contact: {},
     personalDetails: {},
   },
   config: {
-    someConfig: {
-      couldInsteadBe: 'HTML',
-    },
+    content: '',
+    page: 'Contact',
+    product: 'Home',
   },
 };
 
@@ -38,7 +38,7 @@ const rootReducer = (state = initState, action) => {
     case 'CHANGE_CONFIG':
       return {
         ...state,
-        config: action.payload
+        config: action.payload,
       };
 
     default:
