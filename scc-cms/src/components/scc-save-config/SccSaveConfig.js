@@ -53,7 +53,7 @@ stateChanged({ rootReducer: { product, page, config: { html }} }) {
 
   render() {
     this.addEventListener('click', () => {
-      const html = { html: document.getElementById('scc-page').outerHTML };
+      const html = { html: document.getElementById('scc-page') };
 
       store.dispatch({
       type: `CHANGE_CONFIG`,
