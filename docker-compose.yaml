@@ -34,8 +34,22 @@ services:
       - "27017:27017"
     networks:
       - "scc"
+
+  rabbitmq:
+    container_name: scc-broker
+    build: ./scc-broker
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "61613:61613"
+      - "15674:15674"
+    volumes:
+      - 'broker-volume:/data'
+    networks:
+      - "scc"
   
 volumes:
+  broker-volume:
   mongo-volume:
 
 networks:
